@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-image: url("./img3/background.jpg");
+  background-size: cover;
+  background-position: 100%;
+}
+
+/*  Enemy  */
+.enemy__block {
+  gap: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  left: 25%;
+  animation: movingEnemy 6s alternate infinite linear;
+}
+@keyframes movingEnemy {
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+    transform: translateX(300px);
+  }
+}
+.enemy__img {
+  width: 800px;
+  height: 800px;
+  object-fit: cover;
+}
+.enemy__hp {
+  height: 6vmin;
+  border: 2px solid #111;
+  background-color: red;
+  transition: 0.5s;
+}
+.active {
+  animation: 2s onHp alternate forwards linear;
+}
+@keyframes onHp {
+  40% {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Player */
+.player__hp {
+  width: 300px;
+  height: 6vmin;
+  background-color: lime;
+  border: 2px solid #111;
+}
+
+#player__bl {
+  pointer-events: none;
+  display: flex;
+  gap: 1vmin;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+#player__img {
+  width: 250px;
+  height: 250px;
+}
+
+/* Arsenal  */
+.arsenal__block {
+  display: none;
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #001f3f;
+}
+.arsenal_active {
+  display: block;
+}
+.arsenal__block img {
+  width: 100px;
+  height: 50px;
+}
+.caps {
+  padding: 30px;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0074d9;
+  color: #fff;
+  margin: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: changeBackground 1s infinite alternate linear;
+}
+@keyframes changeBackground {
+  to {
+    background-color: #fff;
+    color: #0074d9;
+  }
+}
+
+.win__end {
+  background-image: url("./images/win.jpg");
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-size: 100% 100%;
+  z-index: 1000;
+  bottom: 0.2vmax;
+  display: none;
+}

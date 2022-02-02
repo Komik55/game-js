@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(images/loc1.png);
+  background-size: 100% 100%;
+}
+
+.enemy1 {
+  background-image: url(images/enemy1.png);
+  background-size: 100% 100%;
+  left: 35vw;
+  top: 30vh;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+.enemy2 {
+  background-size: 100% 100%;
+  background-image: url(images/enemy2.png);
+  left: 45vmax;
+  top: 25vmax;
+  display: none;
+}
+.enemy3 {
+  background-size: contain;
+  background-image: url(images/boss.png);
+  left: 35vmax;
+  top: 24vmax;
+  display: none;
+}
+.enemymain {
+  height: 45vh;
+  width: 24vw;
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 100;
+  animation: 6s move alternate infinite;
+}
+.healenemy {
+  height: 4vh;
+  width: 20vw;
+  background-color: red;
+  border-radius: 5px;
+  position: absolute;
+  animation: 6s move alternate infinite;
+}
+.enemypoint {
+  left: 39vw;
+  top: 22vh;
+}
+.enemypoint2 {
+  left: 46vw;
+  top: 22vw;
+  display: none;
+}
+.enemypoint3 {
+  left: 31vw;
+  top: 22vw;
+  display: none;
+}
+.sword {
+  height: 10vh;
+  width: 11vw;
+  background-image: url(images/Sword.png);
+  background-size: 100% 100%;
+  transform: rotate(55deg);
+  position: absolute;
+  z-index: 1;
+}
+.hero {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 5vw;
+  top: -0.8vmax;
+}
+.heroimg {
+  height: 7vh;
+  width: 20vw;
+  background-image: url(images/hero.png);
+  background-size: cover;
+}
+.heropoint {
+  height: 5vh;
+  width: 20vmax;
+  background-color: tomato;
+  border: solid 2px darkgreen;
+  border-radius: 4px;
+}
+
+.boxbomb,
+.mechheal {
+  height: 10vw;
+  width: 10vw;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2vw;
+  color: orange;
+  position: absolute;
+  top: 40vmax;
+}
+.boxbomb {
+  left: 10vmax;
+}
+.btoom,
+.potions {
+  height: 7vw;
+  width: 7vw;
+  background-size: 100% 100%;
+}
+.btoom {
+  background-image: url(images/b3.png);
+}
+.potions {
+  background-image: url(images/h1.png);
+}
+
+.bb {
+  height: 5vw;
+  width: 5vw;
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  left: 47vmax;
+  top: 36vmax;
+}
+.bombp {
+  background-image: url(images/bt`.gif);
+}
+.btoomp {
+  background-image: url(images/bt1.gif);
+}
+
+@keyframes move {
+  20% {
+    transform: translate(-50px);
+  }
+  60% {
+    transform: translate(50px);
+  }
+}
